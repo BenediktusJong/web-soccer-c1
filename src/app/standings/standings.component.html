@@ -1,1 +1,22 @@
-<p>standings works!</p>
+<h3>{{leagueName}} Standings</h3>
+<br>
+<table>
+    <thead>
+        <tr>
+            <th></th>
+            <th>Games</th>
+            <th>Points</th>
+            <th>Goals For</th>
+            <th>Goals Against</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor=let currentRow of standings>
+            <td>{{currentRow.teamName}}</td>
+            <td>{{currentRow.gamePlayed}}</td>
+            <td>{{currentRow.win*3 + currentRow.tie}}</td>
+            <td>{{currentRow.goalFor}}</td>
+            <td>{{currentRow.goalAgainst}}</td>
+        </tr>
+    </tbody>
+</table>
