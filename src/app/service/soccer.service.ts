@@ -14,11 +14,11 @@ export class soccerService{
         return season_schedule;
     }
 
-    getTeamAsync(){
+    getAllTeamAsync(){
         return Promise.resolve(teams);
     }
 
-    getTeams(){
+    getAllTeam(){
         return teams;
     }
 

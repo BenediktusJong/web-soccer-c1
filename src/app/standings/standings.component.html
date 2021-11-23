@@ -11,7 +11,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor=let currentRow of standings>
+        <tr *ngFor= "let currentRow of standing">
             <td>{{currentRow.teamName}}</td>
             <td>{{currentRow.gamePlayed}}</td>
             <td>{{currentRow.win*3 + currentRow.tie}}</td>
