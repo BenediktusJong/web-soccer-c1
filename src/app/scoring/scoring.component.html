@@ -1,1 +1,66 @@
-<p>scoring works!</p>
+<h3>{{leagueName}}</h3>
+<br/>
+<form>
+    <p>Season Starts: {{seasonStart}} &nbsp;</p>
+    <div class= "container" [ngSwitch]= "currentRole*10">
+        <div *ngSwitchCase=10>Head Referee</div>
+        <div *ngSwitchCase=20>Referee</div>
+        <div *ngSwitchCase=30>Scorekeeper</div>
+        <div *ngSwitchCase=40>Admin</div>
+        <div *ngSwitchCase=10>End User</div>
+    </div>
+
+    <br/>
+
+    <p style= "font-size: large; margin-left: 50px;">
+        Game:
+        <select (change)= "onSchedChange($any($event).target.value)">
+            <option *ngFor= "let currentRow of mySchedule" 
+            value={{currentRow.id}}>
+                {{currentRow.homeTeam + " vs " + currentRow.awayTeam}}
+            </option>
+        </select>
+    </p>
+
+    <div class="row">
+        <div class="col-md-2">
+            &nbsp;
+        </div>
+        <div class="form-group col-md-3">
+            <label for="homeTeam" 
+            style="float:left;font-size:large;">{{homeTeam}}</label>
+        </div>
+        <div class="form-group col-md-2">
+            <input type="number" 
+            style="width: 80px; float:right;text-align:right;" 
+            [(ngModel)]="homeScore" name="homeScoreVal" 
+            class="form-control"
+            />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            &nbsp;
+        </div>
+        <div class="form-group col-md-3">
+            <label for="awayTeam" 
+            style="float:left;font-size:large;">{{awayTeam}}</label>
+        </div>
+        <div class="form-group col-md-2">
+            <input type="number"
+                style="width: 80px; float:right;text-align:right;" 
+                [(ngModel)]="awayScore" name="awayScoreVal" 
+                class="form-control"
+            />
+        </div>
+    </div>
+
+    <br/>
+
+    <button type="button" (click)="onRecordScores()"
+        style="font-size: large;margin-left: 50px;"
+    >
+    Record Scores
+    </button>
+</form>

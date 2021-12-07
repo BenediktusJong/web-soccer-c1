@@ -20,11 +20,11 @@ export class StandingsComponent implements OnInit {
 
   constructor(private _titleService:Title, private _soccerService:soccerService) {
     this._titleService.setTitle('Pertandingan Sepakbola Negara Akoeh');
-    this.myTeam=[];
-    this.mySchedule=[];
-    this.standing=[];
+    this.myTeam= [];
+    this.mySchedule= [];
+    this.standing= [];
     this.getTeam();
-    this.leagueName="Ligaku";
+    this.leagueName= "Ligaku";
     this.getSchedule();
     this.computeRanking();
   }
